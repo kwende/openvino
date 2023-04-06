@@ -27,14 +27,14 @@ public:
         : _request(request), _inputs(inputs), _outputs(outputs)
     {
         _request.set_callback([this](std::exception_ptr exception_ptr) {
-            _end_time = Time::now();
-            try {
-                if (exception_ptr) {
-                    std::rethrow_exception(exception_ptr);
-                }
-            } catch (const std::exception& e) {
-                throw ov::Exception("Caught exception: " + std::string(e.what()));
-            }
+            // _end_time = Time::now();
+            // try {
+            //     if (exception_ptr) {
+            //         std::rethrow_exception(exception_ptr);
+            //     }
+            // } catch (const std::exception& e) {
+            //     throw ov::Exception("Caught exception: " + std::string(e.what()));
+            // }
         });
     }
     // ~InferRequestWrapper() = default;
